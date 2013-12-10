@@ -1,0 +1,13 @@
+.DS_Store
+.buildpath
+.project
+.settings*
+*.lock
+*.log
+*.o
+
+a.out.dSYM
+a.out
+
+*.xcodeproj
+*.pbxproj
