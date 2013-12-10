@@ -98,14 +98,13 @@ repsonse body:
 
 ## 作者
 
-  * [Dearcoin.com](https://github.com/dearcoin)
-  * Support By [Bitfund.pe](http://bitfund.pe).
+* [Dearcoin.com](https://github.com/dearcoin) / Support By [Bitfund.pe](http://bitfund.pe).
 
 * * *
 
 ## Demo
 
-  * [http://bitpass.618.io](http://bitpass.618.io)
+* [http://bitpass.618.io](http://bitpass.618.io)
 
 
 ## Q&A
