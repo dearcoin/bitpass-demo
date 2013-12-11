@@ -70,7 +70,6 @@ address | bitcoin address corresponding to signing key | yes
 signature | signature (Base64 encoding) | yes 
 message | source message | yes
 
-签名后将上述格式数据，使用HTTP GET/POST请求发送至`cbk`指定URL。
 After signing the data using the above method, use HTTP GET/POST requests to the specified callback URL.
 
 #### 扩展参考字段 / Extended Reference Field
