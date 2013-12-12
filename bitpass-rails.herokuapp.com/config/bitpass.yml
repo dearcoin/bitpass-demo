@@ -1,0 +1,6 @@
+development:
+  callback_url: "http://10.0.1.190:3000/callback"
+  display_title: "bitpass_rails"
+production:
+  callback_url: "http://bitpass-rails.herokuapp.com/callback"
+  display_title: "bitpass_rails"
