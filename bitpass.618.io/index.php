@@ -39,7 +39,8 @@ $qr_img_url = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=".urlen
 			</ul>
 		</td>
 		<td>
-		  <img style="width: 250px;height:250px;" src="<?php echo htmlspecialchars($qr_img_url);?>" />
+			<div id="qr_code"></div>
+		  <!-- <img style="width: 250px;height:250px;" src="<?php echo htmlspecialchars($qr_img_url);?>" /> -->
 		</td>
 	</tr>
 	</tbody>
@@ -54,11 +55,14 @@ $qr_img_url = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=".urlen
 	<li><a href="https://github.com/dearcoin/bitpass-demo">bitpass@Github</a>
 </ul>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
 
 <script>
 var sm = "<?php echo $sm;?>";
 $(document).ready(function() {
+  $('#qr_code').qrcode({width: 200,height: 200, text: "<?php echo $qr_msg; ?>"});
+
 	setInterval(function() {
 		$("#verify_status span").html('checking...');
 		$.get("trylogin.php", {message: sm}, function(data) {
