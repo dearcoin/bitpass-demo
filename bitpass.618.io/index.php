@@ -51,7 +51,7 @@ $qr_img_url = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=".urlen
 <h3>Help</h3>
 <ul>
 	<li>refresh page to get new source message</li>
-	<li><a href="https://github.com/bitkevin/bitpass">bitpass@Github</a>
+	<li><a href="https://github.com/dearcoin/bitpass-demo">bitpass@Github</a>
 </ul>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
