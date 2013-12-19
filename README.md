@@ -145,6 +145,7 @@ response body:
 ## Demo
 
 * [http://bitpass.618.io](http://bitpass.618.io)
+* [http://bitpass-rails.herokuapp.com](http://bitpass-rails.herokuapp.com)
 
 
 ## Q&A
@@ -158,8 +159,8 @@ In short, Bitpass eliminates the need for login passwords.  Secure logins can be
 
 ### Q: 与Google Authenticator有什么区别？
 ### Q: How is Bitpass different from Google Authenticator?
-A: Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而Bitpass不存在此问题。
-Google Authenticator provides 2-factor authentication, and the user's credentials are still required.  User passwords are still stored on the server.
+A: Google Authenticator通常用于身份的二次验证，提高认证过程的安全性。但其依然需要同时在服务端、客户端保存一个种子，已完成核对。若服务端数据泄露，会导致Google Authenticator形同虚设，而Bitpass不存在此问题。Bitpass需要连接网络发送签名验证数据，Google Authenticater则不需要。
+Google Authenticator provides 2-factor authentication, and the user's credentials are still required.  User secrets are still stored on the server.
 
 
 ### Q：Bitpass有什么风险？
@@ -186,8 +187,7 @@ All data stored by Bitpass is encrypted using extremely secure algorithms, so ev
 
 ### Q: Bitpass与比特币的关系？
 ### Q: What's the relationship between Bitpass and Bitcoin?
-A: Bitpass与比特币采用相同的签名算法(基于ECDSA)，并且签名时头部硬编码了与比特币相同的消息，所以与比特币的签名是兼容的
-
+A: Bitpass与比特币采用相同的签名算法(基于ECDSA)，并且签名时头部硬编码了与比特币相同的消息，所以与比特币的签名是兼容的。
 Bitpass uses the same digital signature algorithm as Bitcoin (ECDSA) and encode the resulting keys using the same algorithm, so Bitpass keys are actually valid Bitcoin addresses.
 
 
@@ -203,6 +203,7 @@ A：
 * 对于未绑定Bitpass用户，先让其使用普通方式登录，进入绑定页面，在网站上显示一个唯一Token（二维码），然后等待该Token的回发验证消息
   * 验证通过后，将此验证消息的签名地址绑定至该用户
 * 对于已绑定的用户，显示Token，等待该Token的回发验证消息，通过后，查询其地址绑定的用户，认证通过执行登录操作，完成身份并登录
+* 强烈建议回调URL采用HTTPS，以增强安全性
 
 - Add a Bitcoin message validation library (ECDSA signature verification). Take a look at our demo for PHP and Ruby versions.
 - Add a Bitcoin address field for each user in your database.
@@ -210,7 +211,4 @@ A：
 - To bind a Bitcoin address to a user, allow a user to log in traditionally and provide a page with a Bitcoin address displayed as a QR code.  When the user scans this code, you will receive a validation message.
 - After validation, the user will be bound to this address.
 - For users who are already bound, display the token to the user and wait for the token validation message.  After you've received the message, check the message against the user's bound address.
-
-
-
 
