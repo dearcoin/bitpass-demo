@@ -61,7 +61,7 @@ $qr_img_url = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=".urlen
 <script>
 var sm = "<?php echo $sm;?>";
 $(document).ready(function() {
-  $('#qr_code').qrcode({width: 200,height: 200, text: "<?php echo $qr_msg; ?>"});
+  $('#qr_code').qrcode({width: 200,height: 200,correctLevel: QRErrorCorrectLevel.L, text: "<?php echo $qr_msg; ?>"});
 
 	setInterval(function() {
 		$("#verify_status span").html('checking...');
