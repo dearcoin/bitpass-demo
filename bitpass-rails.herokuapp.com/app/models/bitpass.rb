@@ -10,7 +10,7 @@ class Bitpass
 
   def get_qrcode_data_url width=220,height=220
     #QREncoder.encode(@verify_string).png.resize(width, height).to_data_url
-    RQRCode::QRCode.new(@verify_string).as_png.resize(width, height).to_data_url
+    RQRCode::QRCode.new(@verify_string,:level =>:l).as_png.resize(width, height).to_data_url
     #QREncoder.encode(@verify_string).png.resize(width, height).to_data_url
   end
 
